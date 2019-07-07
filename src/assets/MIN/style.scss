@@ -1,0 +1,135 @@
+@charset "UTF-8";
+
+
+
+@import './imports/shadows';
+@import './imports/navbar';
+@import './imports/colors';
+@import './imports/containers';
+@import './imports/utilities';
+@import './imports/scrollbars';
+@import './imports/per_projects';
+
+
+*::before{
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    transition: all 0.5s ease-in-out;
+}
+*{
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    transition: all 0.5s ease-in-out;
+}
+*::after{
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+
+body,html{
+  
+    box-sizing: border-box;
+    transition: all 0.5s ease-in-out;
+
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: smooth;
+    -ms-overflow-style: scrollbar;
+
+    /* Adjust font size */
+    font-size: 100%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    line-height: 1.5;
+    
+    /* Font varient */
+    font-variant-ligatures: none;
+    -webkit-font-variant-ligatures: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    
+    /* Smoothing */
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-smoothing: subpixel-antialiased;
+    -webkit-font-smoothing: subpixel-antialiased;
+    text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
+     
+    /* Font compatility and weight */
+    font-weight: 420;
+    font-family: -apple-system, BlinkMacSystemFont,'Roboto','Open sans', sans-serif;
+
+}
+
+
+
+/** Add the correct display in IE 9-. */
+article,
+aside,
+footer,
+header,
+nav,
+section {
+  display: block;
+}
+
+
+button{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+img,
+embed,
+iframe,
+object,
+video {
+  height: auto;
+  max-width: 100%;
+}
+audio {
+  max-width: 100%;
+}
+iframe {
+  border: 0;
+}
+
+
+a,button{
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,23 @@
+#outrdevents-home-gallery-search{
+    display: flex;
+    justify-content: center;
+
+    #outrdevents-home-gallery-grid-btn{
+        margin: auto auto auto 0;
+    }
+    #outrdevents-home-gallery-dropbox-btn{
+        margin: auto 0 auto auto;
+    }
+
+    button{
+        background: none;
+        outline:none;
+        color: white;
+        border:none;
+        padding: 0;
+        font-size:18px;
+        font-weight: 0 !important;
+    }
+
+
+  }
