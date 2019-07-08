@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="bg-near-amoled">
     <navbar/>
     <router-view/>
   </div>
@@ -16,8 +16,6 @@ export default {
 
 <style>
 @import url("./assets/MIN/style.css");
-@import url("https://unicons.iconscout.com/release/v1.0.0/css/unicons.css");
-@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
 
 
 
