@@ -28,12 +28,12 @@
 
          <div class="horizontal-slider inset-top-50 inset-bottom-50">
 
-           <div class="gallery-item horizontal-align col-md-3 col-sm-6 padding-10 cursor-pointer" v-for="(item, galleryData) in gallery" :key="galleryData">
+           <div class="gallery-item horizontal-align col-md-3 col-sm-6 padding-10 cursor-pointer" v-for="(object, index) in media" :key="index">
              <div class="gallery-item-image">
-               <img class="depth-2" v-bind:src='item.img'>
+               <img class="depth-2" v-bind:src='object.img'>
                <span class="gallery-item-cover"><i class='uil uil-play'></i></span>
              </div>
-             <div class="gallery-item-details"><p>{{item.details}}</p></div>
+             <div class="gallery-item-details"><p>{{object.name}}</p> <small>{{object.date}}</small></div>
            </div>
            
          </div><!--horizontal slider-->
@@ -98,24 +98,46 @@
 </template>
 
 <script>
+
+
+import {db} from '../firebase.js'
+
 export default {
   name: 'home',
   data(){
     return{
-    
-        gallery:[
-          {'img':'https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto','details':'im an image at the gallery'},
-          {'img':'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto','details':'im an image at the gallery'},
-          {'img':'https://images.unsplash.com/photo-1545128485-c400e7702796?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto','details':'im an image at the gallery'},
-          {'img':'https://images.unsplash.com/photo-1502872364588-894d7d6ddfab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto','details':'im an image at the gallery'},    
-          {'img':'https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto','details':'im an image at the gallery'},
-          {'img':'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto','details':'im an image at the gallery'},
-          {'img':'https://images.unsplash.com/photo-1545128485-c400e7702796?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto','details':'im an image at the gallery'},
-          {'img':'https://images.unsplash.com/photo-1502872364588-894d7d6ddfab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto','details':'im an image at the gallery'},
-        ],
+      media:[]
+    }
+  },
 
+
+  created(){
+          db.collection('gallery').get().then((querySnapshot) => {
+            querySnapshot.forEach((doc) =>{
+              //console.log(doc.data())
+                 const data ={
+                   'img': doc.data().object,
+                   'name': doc.data().object_name,
+                   'date': doc.data().object_date,
+                 }
+                 this.media.push(data)
+            })
+          });
+  },
+  computed: {
+    filteredItems() {
+      return this.items.filter(item => {
+         return item.type.toLowerCase().indexOf(this.search.toLowerCase()) > -1
+      })
     }
   }
+
+
+
+
+
+
+
 
 }
 </script>

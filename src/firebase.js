@@ -12,9 +12,9 @@ const firebaseConfig = {
     authDomain: "outrdevents-raymundo.firebaseapp.com",
     databaseURL: "https://outrdevents-raymundo.firebaseio.com",
     projectId: "outrdevents-raymundo",
-    storageBucket: "",
+    storageBucket: "outrdevents-raymundo.appspot.com",
     messagingSenderId: "255781915941",
-    appId: "1:255781915941:web:e9abd783faf42527"
+    appId: "1:255781915941:web:cbc347cb712e2460"
 }
 firebase.initializeApp(firebaseConfig);
 

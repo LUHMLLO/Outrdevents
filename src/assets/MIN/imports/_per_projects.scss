@@ -23,6 +23,9 @@
   }
 
 
+  .gallery-item{
+      position: relative;
+  }
 
 
   .gallery-item-image{
@@ -73,4 +76,31 @@
         img:hover + .gallery-item-cover{
             opacity: 1;
         }
+    }
+
+    .gallery-item-details{
+        display: flex;
+        justify-content: space-between;
+        padding:5px 0px;
+
+        p{
+            font-size:13px;
+            text-transform: capitalize;
+            color: rgba(255,255,255,0.5);
+            white-space: nowrap;
+            width: 60%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-align: left;
+        }
+        small{
+            font-size:13px;
+            text-transform: capitalize;
+            color: rgba(255,255,255,0.5);
+            white-space: nowrap;
+            text-align: right;
+        }
+
+
+
     }
