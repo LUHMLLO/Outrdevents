@@ -58,9 +58,11 @@
     width:200px;
     display: flex;
     justify-content: center;
+    user-select: none;
 
     img{
       margin: auto;
+      user-select: none;
     }
   
     .font-logo{
