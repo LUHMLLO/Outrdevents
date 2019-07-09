@@ -2,7 +2,7 @@
     <div class="navbar fixed-top bg-white depth-5">
 
           <div class="nav-logo">
-              <h1 class="font-logo">OUTRDEVENTS</h1>
+              <img src="../assets/logo.png">
           </div>
 
         <div class="nav-links">

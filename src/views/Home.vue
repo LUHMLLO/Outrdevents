@@ -68,6 +68,20 @@
 
 
 
+     <div class="row color-white">
+       <div class="col-md-4 padding-50">
+         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat nesciunt culpa in cum dolor. Repudiandae rerum optio assumenda! Expedita ut veniam modi voluptas eum, autem nisi ex nulla! Ea, saepe?</p>
+       </div>
+       <div class="col-md-4 padding-50">
+         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat nesciunt culpa in cum dolor. Repudiandae rerum optio assumenda! Expedita ut veniam modi voluptas eum, autem nisi ex nulla! Ea, saepe?</p>
+       </div>
+       <div class="col-md-4 padding-50">
+         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat nesciunt culpa in cum dolor. Repudiandae rerum optio assumenda! Expedita ut veniam modi voluptas eum, autem nisi ex nulla! Ea, saepe?</p>
+       </div>
+     </div>
+
+
+
 
 
 

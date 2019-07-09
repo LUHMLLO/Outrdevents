@@ -55,22 +55,17 @@
   
   .nav-logo{
     margin: auto auto auto 0;
-    width:250px;
+    width:200px;
+    display: flex;
+    justify-content: center;
+
+    img{
+      margin: auto;
+    }
   
     .font-logo{
       letter-spacing: 2px;
       position: relative;
-  
-      &::after{
-        content: '';
-        width:30%;
-        border-bottom: solid thin white;
-        display: block;
-        height: 100%;
-        position: absolute;
-        top: 0px;
-        left: 0;
-      }
     }
   }
 

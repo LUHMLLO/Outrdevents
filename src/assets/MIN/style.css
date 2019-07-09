@@ -97,23 +97,22 @@
 
 .nav-logo {
   margin: auto auto auto 0;
-  width: 250px;
+  width: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.nav-logo img {
+  margin: auto;
 }
 
 .nav-logo .font-logo {
   letter-spacing: 2px;
   position: relative;
-}
-
-.nav-logo .font-logo::after {
-  content: '';
-  width: 30%;
-  border-bottom: solid thin white;
-  display: block;
-  height: 100%;
-  position: absolute;
-  top: 0px;
-  left: 0;
 }
 
 @media (max-width: 1000px) {
@@ -813,13 +812,27 @@
 }
 
 .row {
-  display: -ms-flexbox;
   display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
+      flex-wrap: wrap;
+  margin-top: 0;
+  margin-left: auto;
+  margin-bottom: 0;
+  margin-right: auto;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  padding: 0;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col,
