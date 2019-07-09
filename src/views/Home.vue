@@ -28,13 +28,13 @@
 
          <div class="horizontal-slider inset-top-50 inset-bottom-50">
 
-           <div class="gallery-item horizontal-align col-md-3 col-sm-6 padding-10 cursor-pointer" v-for="(object, index) in media" :key="index">
+           <button class="gallery-item horizontal-align col-md-3 col-sm-6 padding-10 cursor-pointer" v-for="(object, index) in media" :key="index">
              <div class="gallery-item-image">
                <img class="depth-2" v-bind:src='object.img'>
-               <span class="gallery-item-cover"><i class='uil uil-play'></i></span>
+               <span class="gallery-item-cover"><i class='uil uil-play color-white'></i></span>
              </div>
              <div class="gallery-item-details"><p>{{object.name}}</p> <small>{{object.date}}</small></div>
-           </div>
+           </button><!--gallery item-->
            
          </div><!--horizontal slider-->
 
