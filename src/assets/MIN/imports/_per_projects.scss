@@ -1,12 +1,18 @@
+#gallery{
+    position: relative;
+}
+
 #outrdevents-home-gallery-search{
     display: flex;
     justify-content: center;
 
     #outrdevents-home-gallery-grid-btn{
         margin: auto auto auto 0;
+        position: relative;
     }
     #outrdevents-home-gallery-dropbox-btn{
         margin: auto 0 auto auto;
+        position: relative;
     }
 
     button{

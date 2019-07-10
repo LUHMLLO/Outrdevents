@@ -1,7 +1,12 @@
 <template>
   <div id="app" class="bg-near-amoled">
     <navbar/>
-    <router-view/>
+
+    <transition enter-active-class="animated fadeIn" leave-active-class="fadeOut">
+     <router-view/>
+    </transition>
+  
+  
   </div>
 </template>
 

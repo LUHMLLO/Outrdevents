@@ -4,7 +4,6 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
 
 
-
 @import './imports/shadows';
 @import './imports/navbar';
 @import './imports/colors';
@@ -14,6 +13,8 @@
 @import './imports/per_projects';
 @import './imports/grid';
 @import './imports/carousel';
+@import './imports/animate';
+@import './imports/dropdowns';
 
 *::before{
     box-sizing: inherit;
