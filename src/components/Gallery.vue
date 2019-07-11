@@ -8,19 +8,19 @@
             <input type="text" placeholder="Buscar....">
           </div>
 
-          <button id="outrdevents-home-gallery-dropbox-btn">
-              <i class='uil uil-dropbox dropdown-btn'></i>
-              <div class="dropdown-box depth-5 flex-center bg-white color-dark padding-50">
+          <div id="outrdevents-home-gallery-dropbox-btn">
+              <button class='uil uil-dropbox dropdown-btn'></button>
+              <div class="dropdown-box depth-5 flex-center bg-white color-dark padding-50 text-center">
                  <i class='uil uil-dropbox margin-center font-size-50 color-smoke'></i>
               </div>
-          </button>
+          </div>
         </div><!--outrdevents-home-gallery-search-->
 
 
 
-         <div class="horizontal-slider inset-top-50 inset-bottom-50">
+         <div class="horizontal-slider inset-top-50 inset-bottom-50" v-bind:class="{ row: gridMode }">
 
-           <button class="gallery-item horizontal-align col-md-3 col-sm-6 padding-10 cursor-pointer" v-for="(object, index) in media" :key="index">
+           <button class="gallery-item horizontal-align col-md-3 col-sm-6 padding-10 cursor-pointer" v-for="(object, index) in filteredItems" :key="index">
              <div class="gallery-item-image">
                <img class="depth-2" v-bind:src='object.img'>
                <span class="gallery-item-cover"><i class='uil uil-play color-white'></i></span>
@@ -45,7 +45,8 @@ export default {
 
 data(){
     return{
-      media:[]
+      media:[],
+      gridMode:false,
     }
   },
 
@@ -64,11 +65,12 @@ data(){
           });
   },
   computed: {
-    filteredItems() {
-      return this.items.filter(item => {
-         return item.type.toLowerCase().indexOf(this.search.toLowerCase()) > -1
-      })
+    filteredItems: function() {
+        let result = this.media
+        return result
     }
   }
 }
 </script>
+
+
