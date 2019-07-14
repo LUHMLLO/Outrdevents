@@ -11,7 +11,7 @@
           <div id="outrdevents-home-gallery-dropbox-btn">
               <button class='uil uil-dropbox dropdown-btn'></button>
               <div class="dropdown-box depth-5 flex-center bg-white color-dark padding-50 text-center">
-                 <i class='uil uil-dropbox margin-center font-size-50 color-smoke'></i>
+                 <input type="file" @change="onFileSelected" />
               </div>
           </div>
         </div><!--outrdevents-home-gallery-search-->
@@ -23,7 +23,6 @@
            <button class="gallery-item horizontal-align col-md-3 col-sm-6 padding-10 cursor-pointer" v-for="(object, index) in filteredItems" :key="index">
              <div class="gallery-item-image">
                <img class="depth-2" v-bind:src='object.img'>
-               <span class="gallery-item-cover"><i class='uil uil-play color-white'></i></span>
              </div>
              <div class="gallery-item-details"><p>{{object.name}}</p> <small>{{object.date}}</small></div>
            </button><!--gallery item-->
@@ -38,6 +37,7 @@
 
 <script>
 import {db} from '../firebase.js'
+import axios from 'axios'
 
 export default {
     name:'gallery',  
@@ -47,6 +47,7 @@ data(){
     return{
       media:[],
       gridMode:false,
+      selectedFile:null,
     }
   },
 
@@ -69,7 +70,31 @@ data(){
         let result = this.media
         return result
     }
-  }
+  },
+
+
+
+  methods:{
+
+    onFileSelected(event){
+     this.selectedFile = event.target.files[0]
+
+     const fd = new FormData()
+     fd.append('image', this.selectedFile, this.selectedFile.name)
+     axios.post('url goes here', fd)
+     .then(res => {
+       console.log(res)
+     })
+    }
+
+
+
+
+  },
+
+
+
+
 }
 </script>
 

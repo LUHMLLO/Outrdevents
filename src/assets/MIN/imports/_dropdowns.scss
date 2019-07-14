@@ -14,7 +14,8 @@
     pointer-events: none;
 }
 
-.dropdown-btn:focus + .dropdown-box{
+.dropdown-btn:focus + .dropdown-box,
+.dropdown-box:hover{
     opacity: 1;
     pointer-events: all;
 }
