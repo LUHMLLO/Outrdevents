@@ -72,16 +72,27 @@ data(){
 
 
 
+
   methods:{
 
       UploadImage(e){
         const file = e.target.files[0];
           console.log(file)
 
-          let selectedFile = ref.child(file.name)
+          let selectedFile = ref.child('gallery/'+file.name)
         
-        selectedFile.put(file).then(function(snapshot){
-          console.log('it works')
+        selectedFile.put(file).then(response =>{
+          
+        response.ref.getDownloadURL().then((downloadURL) => {
+            db.collection('gallery').add({
+              object:downloadURL,
+              object_name:file.name,
+              object_date:'00/00/00',
+            })
+        })
+
+        console.log('done')
+
           }).catch(err => console.log(err))
       }
 
