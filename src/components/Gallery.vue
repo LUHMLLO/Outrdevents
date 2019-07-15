@@ -1,5 +1,9 @@
 <template>
-       <div id="gallery" class="color-white padding-50 inset-top-50 inset-bottom-50">
+       <div id="gallery" class="color-white padding-30 inset-top-50 inset-bottom-50">
+
+
+
+
 
         <div id="outrdevents-home-gallery-search">
           <button id="outrdevents-home-gallery-grid-btn" v-on:click="gridMode = true" v-if="!gridMode">
@@ -23,16 +27,25 @@
 
 
 
+
+
+
+      
          <div class="horizontal-slider inset-top-50 inset-bottom-50" v-bind:class="{ row: gridMode }">
           
-           <button class="gallery-item horizontal-align col-md-4 col-sm-6 padding-10 cursor-pointer" v-for="(object, index) in filteredItems" :key="index">
-             <div class="gallery-item-image">
-               <img class="depth-2" v-bind:src='object.img'>
-             </div>
+           <div class="gallery-item horizontal-align" v-for="(object, index) in filteredItems" :key="index">
+             <div class="gallery-item-image z-depth-2" v-bind:style="{backgroundImage: 'url('+object.img+')'}"></div>
              <div class="gallery-item-details"><p>{{object.name}}</p> <small>{{object.date}}</small></div>
-           </button><!--gallery item-->
+           </div><!--gallery item-->
            
          </div><!--horizontal slider-->
+
+
+
+
+
+
+
 
 
    </div><!---gallery--->
@@ -89,8 +102,8 @@ data(){
         
         selectedFile.put(file).then(response =>{
           
-        response.ref.getDownloadURL().then((downloadURL) => {
-            db.collection('gallery').add({
+        response.ref.getDownloadURL().then((downloadURL) => {          
+           db.collection('gallery').add({
               object:downloadURL,
               object_name:file.name,
               object_date:'00/00/00',
@@ -103,7 +116,13 @@ data(){
           text: 'Proceso finalizado con exito!'
         })
 
-          }).catch(err => console.log(err))
+          }).catch(err => 
+            Swal.fire({
+              type: 'error',
+              title: 'Error',
+              text: err,
+            })
+          )
       }
 
 

@@ -788,6 +788,7 @@
 
 #gallery {
   position: relative;
+  will-change: contents !important;
 }
 
 #outrdevents-home-gallery-search {
@@ -822,38 +823,44 @@
 .gallery-item {
   position: relative;
   background: none !important;
-  border: none !important;
   outline: none !important;
   -o-object-fit: cover !important;
      object-fit: cover !important;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 5px;
+  min-width: 33.33%;
+  min-height: 320px;
+  will-change: scroll-position !important;
+}
+
+@media (max-width: 1000px) {
+  .gallery-item {
+    min-width: 50%;
+  }
+}
+
+@media (max-width: 620px) {
+  .gallery-item {
+    min-width: 100%;
+  }
 }
 
 .gallery-item-image {
   position: relative !important;
-  max-width: 100%;
+  min-width: 100%;
+  min-height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  overflow: hidden;
-  border: none !important;
-}
-
-.gallery-item-image img {
-  min-width: 100% !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  min-height: 100%;
-  height: 248px;
-  max-height: 100%;
-  -ms-flex-negative: 0 !important;
-      flex-shrink: 0 !important;
-  -o-object-fit: cover !important;
-     object-fit: cover !important;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
 }
 
 .gallery-item-details {
@@ -4829,6 +4836,7 @@ body, html {
           box-sizing: border-box !important;
   -webkit-transition: all 0.5s ease-in-out !important;
   transition: all 0.5s ease-in-out !important;
+  will-change: contents !important;
   scroll-behavior: smooth !important;
   -webkit-overflow-scrolling: smooth !important;
   -ms-overflow-style: scrollbar !important;
