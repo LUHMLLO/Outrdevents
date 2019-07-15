@@ -11,7 +11,7 @@
           <div id="outrdevents-home-gallery-dropbox-btn">
               <button class='uil uil-dropbox dropdown-btn'></button>
               <div class="dropdown-box depth-5 flex-center bg-white color-dark padding-50 text-center">
-                 <input type="file" @change="onFileSelected" />
+                 <input type="file" accept="image/*" v-on:change="UploadImage" />
               </div>
           </div>
         </div><!--outrdevents-home-gallery-search-->
@@ -36,8 +36,7 @@
 
 
 <script>
-import {db} from '../firebase.js'
-import axios from 'axios'
+import {db,ref} from '../firebase.js'
 
 export default {
     name:'gallery',  
@@ -47,7 +46,6 @@ data(){
     return{
       media:[],
       gridMode:false,
-      selectedFile:null,
     }
   },
 
@@ -76,16 +74,16 @@ data(){
 
   methods:{
 
-    onFileSelected(event){
-     this.selectedFile = event.target.files[0]
+      UploadImage(e){
+        const file = e.target.files[0];
+          console.log(file)
 
-     const fd = new FormData()
-     fd.append('image', this.selectedFile, this.selectedFile.name)
-     axios.post('url goes here', fd)
-     .then(res => {
-       console.log(res)
-     })
-    }
+          let selectedFile = ref.child(file.name)
+        
+        selectedFile.put(file).then(function(snapshot){
+          console.log('it works')
+          }).catch(err => console.log(err))
+      }
 
 
 
