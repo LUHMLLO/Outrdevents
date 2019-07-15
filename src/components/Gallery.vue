@@ -2,7 +2,12 @@
        <div id="gallery" class="color-white padding-50 inset-top-50 inset-bottom-50">
 
         <div id="outrdevents-home-gallery-search">
-          <button id="outrdevents-home-gallery-grid-btn"><i class='uil uil-apps'></i></button>
+          <button id="outrdevents-home-gallery-grid-btn" v-on:click="gridMode = true" v-if="!gridMode">
+            <i class='uil uil-apps'></i>
+          </button>
+          <button id="outrdevents-home-gallery-grid-btn" v-on:click="gridMode = false" v-if="gridMode">
+            <i class='uil uil-grids'></i>
+          </button> 
 
           <div class="search-wrapper">
             <input type="text" placeholder="Buscar....">
@@ -19,7 +24,7 @@
 
 
          <div class="horizontal-slider inset-top-50 inset-bottom-50" v-bind:class="{ row: gridMode }">
-
+          
            <button class="gallery-item horizontal-align col-md-3 col-sm-6 padding-10 cursor-pointer" v-for="(object, index) in filteredItems" :key="index">
              <div class="gallery-item-image">
                <img class="depth-2" v-bind:src='object.img'>
@@ -37,6 +42,7 @@
 
 <script>
 import {db,ref} from '../firebase.js'
+import Swal from 'sweetalert2'
 
 export default {
     name:'gallery',  
@@ -91,7 +97,11 @@ data(){
             })
         })
 
-        console.log('done')
+        Swal.fire({
+          type: 'success',
+          title: 'Terminado',
+          text: 'Proceso finalizado con exito!'
+        })
 
           }).catch(err => console.log(err))
       }

@@ -4819,31 +4819,31 @@
 }
 
 body, html {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  -webkit-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: smooth;
-  -ms-overflow-style: scrollbar;
+  -webkit-box-sizing: border-box !important;
+          box-sizing: border-box !important;
+  -webkit-transition: all 0.5s ease-in-out !important;
+  transition: all 0.5s ease-in-out !important;
+  scroll-behavior: smooth !important;
+  -webkit-overflow-scrolling: smooth !important;
+  -ms-overflow-style: scrollbar !important;
   /* Adjust font size */
-  font-size: 100%;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  line-height: 1.5;
+  font-size: 100% !important;
+  -webkit-text-size-adjust: 100% !important;
+  -ms-text-size-adjust: 100% !important;
+  line-height: 1.5 !important;
   /* Font varient */
-  font-variant-ligatures: none;
-  -webkit-font-variant-ligatures: none;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  font-variant-ligatures: none !important;
+  -webkit-font-variant-ligatures: none !important;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
   /* Smoothing */
-  text-rendering: optimizeLegibility;
-  -moz-osx-font-smoothing: grayscale;
-  font-smoothing: subpixel-antialiased;
-  -webkit-font-smoothing: subpixel-antialiased;
-  text-shadow: rgba(0, 0, 0, 0.01) 0 0 1px;
+  text-rendering: optimizeLegibility !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  font-smoothing: subpixel-antialiased !important;
+  -webkit-font-smoothing: subpixel-antialiased !important;
+  text-shadow: rgba(0, 0, 0, 0.01) 0 0 1px !important;
   /* Font compatility and weight */
-  font-weight: 420;
-  font-family: -apple-system, BlinkMacSystemFont,'Roboto','Open sans', sans-serif;
+  font-weight: 420 !important;
+  font-family: -apple-system, BlinkMacSystemFont,'Roboto','Open sans', sans-serif !important;
 }
 
 /** Add the correct display in IE 9-. */
