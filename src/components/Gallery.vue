@@ -25,7 +25,7 @@
 
          <div class="horizontal-slider inset-top-50 inset-bottom-50" v-bind:class="{ row: gridMode }">
           
-           <button class="gallery-item horizontal-align col-md-3 col-sm-6 padding-10 cursor-pointer" v-for="(object, index) in filteredItems" :key="index">
+           <button class="gallery-item horizontal-align col-md-4 col-sm-6 padding-10 cursor-pointer" v-for="(object, index) in filteredItems" :key="index">
              <div class="gallery-item-image">
                <img class="depth-2" v-bind:src='object.img'>
              </div>

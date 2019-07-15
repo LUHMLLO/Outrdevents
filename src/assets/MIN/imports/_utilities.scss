@@ -408,12 +408,15 @@
 
 
     .horizontal-slider{
-        white-space: nowrap;
-        overflow: hidden;
-        overflow-x: auto;
+        display: flex !important;
+        width:100%;
+        overflow: hidden !important;
+        overflow-x: auto !important;
+        will-change: contents !important;
 
         .horizontal-align{
             display: inline-block !important;
+            will-change: scroll-position !important;
         }
     }
 

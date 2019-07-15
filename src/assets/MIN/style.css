@@ -688,13 +688,18 @@
 }
 
 .horizontal-slider {
-  white-space: nowrap;
-  overflow: hidden;
-  overflow-x: auto;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  width: 100%;
+  overflow: hidden !important;
+  overflow-x: auto !important;
+  will-change: contents !important;
 }
 
 .horizontal-slider .horizontal-align {
   display: inline-block !important;
+  will-change: scroll-position !important;
 }
 
 .padding-5 {
@@ -843,7 +848,7 @@
   width: 100% !important;
   max-width: 100% !important;
   min-height: 100%;
-  height: 260px;
+  height: 248px;
   max-height: 100%;
   -ms-flex-negative: 0 !important;
       flex-shrink: 0 !important;
@@ -859,6 +864,7 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 5px 0px;
+  display: none !important;
 }
 
 .gallery-item-details p {
