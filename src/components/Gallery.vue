@@ -1,5 +1,5 @@
 <template>
-       <div id="gallery" class="color-white padding-30 inset-top-50 inset-bottom-50">
+       <div id="gallery" class="color-white">
 
 
 
@@ -31,9 +31,9 @@
 
 
       
-         <div class="horizontal-slider inset-top-50 inset-bottom-50" v-bind:class="{ row: gridMode }">
+         <div class="horizontal-slider" v-bind:class="{ row: gridMode }">
           
-           <div class="gallery-item horizontal-align" v-for="(object, index) in filteredItems" :key="index">
+           <div class="gallery-item horizontal-align" v-for="(object, index) in media" :key="index">
              <div class="gallery-item-image z-depth-2" v-bind:style="{backgroundImage: 'url('+object.img+')'}"></div>
              <div class="gallery-item-details"><p>{{object.name}}</p> <small>{{object.date}}</small></div>
            </div><!--gallery item-->
@@ -101,6 +101,9 @@ data(){
           let selectedFile = ref.child('gallery/'+file.name)
         
         selectedFile.put(file).then(response =>{
+            
+            var progress = (response.bytesTransferred / response.totalBytes) * 100;
+            console.log('Upload is ' + progress + '% done');
           
         response.ref.getDownloadURL().then((downloadURL) => {          
            db.collection('gallery').add({

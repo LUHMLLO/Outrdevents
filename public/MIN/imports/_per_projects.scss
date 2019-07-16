@@ -1,11 +1,13 @@
 #gallery{
     position: relative;
     will-change: contents !important;
+    padding: 50px 20px;
 }
 
 #outrdevents-home-gallery-search{
     display: flex;
     justify-content: center;
+    padding: 20px;
 
     #outrdevents-home-gallery-grid-btn{
         margin: auto auto auto 0;
@@ -60,6 +62,7 @@
       object-fit: cover;
 
       flex-shrink: 0;
+      will-change: transform !important;
 
       background-size: cover !important;
       background-position: center !important;

@@ -19,9 +19,4 @@ export default {
 }
 </script>
 
-<style>
-@import url("./assets/MIN/style.css");
 
-
-
-</style>

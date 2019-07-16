@@ -41,6 +41,11 @@
     position: relative;
     overflow: hidden !important;
     z-index: 1;
+
+
+    @media (max-width:1000px){
+      min-height: 70vh;
+    }
   
     h1,h2,h3,h4,h5,h6,p,small,span{
       margin: 0 auto;
@@ -48,8 +53,16 @@
   
     h1{
       font-size:50px;
+
+      @media (max-width:1000px){
+        font-size:40px;
+      }
     }
     small{
       font-size: 22px;
+
+      @media (max-width:1000px){
+        font-size: 18px;
+      }
     }
   }
