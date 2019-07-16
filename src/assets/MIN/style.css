@@ -782,6 +782,25 @@
   font-size: 50px;
 }
 
+.input-file::-webkit-file-upload-button {
+  display: none;
+}
+
+.input-file::before {
+  content: 'select file for upload' !important;
+  cursor: pointer;
+  display: block;
+  border: none !important;
+  outline: none !important;
+  width: 100% !important;
+  height: 100%;
+  font-size: 18px;
+  font-weight: 420px;
+  padding: 0 !important;
+  margin: auto !important;
+  text-align: center !important;
+}
+
 *::-webkit-scrollbar {
   display: none;
 }

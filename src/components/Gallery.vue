@@ -20,7 +20,7 @@
           <div id="outrdevents-home-gallery-dropbox-btn">
               <button class='uil uil-dropbox dropdown-btn'></button>
               <div class="dropdown-box depth-5 flex-center bg-white color-dark padding-50 text-center">
-                 <input type="file" accept="image/*" v-on:change="UploadImage" />
+                 <input type="file" accept="image/*" v-on:change="UploadImage" class="input-file" />
               </div>
           </div>
         </div><!--outrdevents-home-gallery-search-->
